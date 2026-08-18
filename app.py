@@ -1001,6 +1001,18 @@ def home():
 
     return render_template_string(HTML)
 
+("/sitemap.xml")
+def sitemap():
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://pinkroman.onrender.com/</loc>
+    </url>
+</urlset>
+"""
+    return Response(xml, mimetype="application/xml")
+
+
 
 if __name__ == "__main__":
 
